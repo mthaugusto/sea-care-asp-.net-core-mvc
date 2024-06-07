@@ -1,0 +1,83 @@
+﻿@model IEnumerable<back_end_sea_care.Models.Evento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Local)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NrParticipantes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MediaAvaliacoes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NrParticipantes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avaliacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaAvaliacoes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

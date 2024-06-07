@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="text-align: left;">
+    <h1 style="text-align: center;">
+
+        <img src="~/images/logo-sea-care.jpg" alt="SeaCare Logo" style="width: 130px; height: 130px;">
+    </h1>
+    <h2 style="text-align: left;">Sea Care API - Gerenciamento de Entidades</h2>
+    <p style="text-align: left;">Realiza operações de integração de dados para garantir que as alterações feitas pelos gestores sejam refletidas no banco de dados Oracle e, quando necessário, comunica-se com o backend Java/Spring através da API própria que foi criada no backend principal.</p>
+</div>
+<div>
+    <h2>Parceiro</h2>
+    <p>Representa um parceiro patrocinador com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único do parceiro.</li>
+        <li><strong>NomeParceiro</strong>: Nome do parceiro, obrigatório.</li>
+        <li><strong>Cnpj</strong>: Cadastro Nacional da Pessoa Jurídica do parceiro, obrigatório.</li>
+        <li><strong>Email</strong>: Email do parceiro, obrigatório.</li>
+        <li><strong>Telefone</strong>: Telefone do parceiro, obrigatório.</li>
+        <li><strong>Setor</strong>: Setor do parceiro, obrigatório.</li>
+        <li><strong>Status</strong>: Status de ativo ou não (0 para inativo, 1 para ativo).</li>
+        <li><strong>DtInicio</strong>: Data de início da parceria, obrigatória.</li>
+        <li><strong>DtFim</strong>: Data de fim da parceria, opcional.</li>
+        <li><strong>Eventos</strong>: Coleção de eventos patrocinados pelo parceiro.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Evento</h2>
+    <p>Representa um evento (limpeza de praia/oceanos, palestras, etc...) com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único do evento.</li>
+        <li><strong>NomeEvento</strong>: Nome do evento, obrigatório.</li>
+        <li><strong>DataEvento</strong>: Data do evento, obrigatória.</li>
+        <li><strong>TipoEvento</strong>: Tipo do evento, obrigatório.</li>
+        <li><strong>DescricaoEvento</strong>: Descrição do evento, obrigatória.</li>
+        <li><strong>Foto</strong>: Foto do evento, opcional.</li>
+        <li><strong>Local</strong>: Local do evento, obrigatório.</li>
+        <li><strong>NrParticipantes</strong>: Número máximo de participantes.</li>
+        <li><strong>Avaliacao</strong>: Avaliação do evento, opcional.</li>
+        <li><strong>MediaAvaliacoes</strong>: Média das avaliações, opcional.</li>
+        <li><strong>Parceiros</strong>: Coleção de parceiros associados ao evento.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Categoria</h2>
+    <p>Representa uma categoria dos produtos da loja com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único da categoria.</li>
+        <li><strong>NomeCategoria</strong>: Nome da categoria, obrigatório.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Fornecedor</h2>
+    <p>Representa um fornecedor dos produtos da loja com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único do fornecedor.</li>
+        <li><strong>NomeFornecedor</strong>: Nome do fornecedor, obrigatório.</li>
+        <li><strong>Cnpj</strong>: Cadastro Nacional da Pessoa Jurídica do fornecedor, obrigatório.</li>
+        <li><strong>Telefone</strong>: Telefone do fornecedor, obrigatório.</li>
+        <li><strong>Setor</strong>: Setor do fornecedor, obrigatório.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Inscricao</h2>
+    <p>Representa uma confirmação de presença de um voluntário em um evento com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único da inscrição.</li>
+        <li><strong>DataInscricao</strong>: Data da inscrição, obrigatória.</li>
+        <li><strong>EventoId</strong>: Identificador do evento associado, obrigatório.</li>
+        <li><strong>UsuarioId</strong>: Identificador do usuário associado, obrigatório.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Produto</h2>
+    <p>Representa um produto da loja com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único do produto.</li>
+        <li><strong>NomeProduto</strong>: Nome do produto, obrigatório.</li>
+        <li><strong>ValorProduto</strong>: Valor do produto, obrigatório.</li>
+        <li><strong>LinkProduto</strong>: Link do produto, obrigatório.</li>
+        <li><strong>FornecedorId</strong>: Identificador do fornecedor associado, obrigatório.</li>
+        <li><strong>CategoriaId</strong>: Identificador da categoria associada, obrigatório.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Relato</h2>
+    <p>Representa um relato de incidente apontado por um voluntário com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único do relato.</li>
+        <li><strong>NomeRelato</strong>: Nome do relato, obrigatório.</li>
+        <li><strong>DescricaoRelato</strong>: Descrição do relato, obrigatória.</li>
+        <li><strong>LinkFoto</strong>: Link da foto associada ao relato, opcional.</li>
+        <li><strong>UsuarioId</strong>: Identificador do usuário associado, obrigatório.</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Usuario</h2>
+    <p>Representa um usuário do sistema com os seguintes campos:</p>
+    <ul>
+        <li><strong>Id</strong>: Identificador único do usuário.</li>
+        <li><strong>NomeUsuario</strong>: Nome do usuário, obrigatório.</li>
+        <li><strong>NivelPermissao</strong>: Nível de permissão do usuário (0 para voluntário, 1 para voluntário-coordenador), obrigatório.</li>
+        <li><strong>Cpf</strong>: CPF do usuário, obrigatório.</li>
+        <li><strong>Login</strong>: Login do usuário, obrigatório.</li>
+        <li><strong>Senha</strong>: Senha do usuário, obrigatório.</li>
+        <li><strong>Cep</strong>: CEP do usuário, obrigatório.</li>
+        <li><strong>Email</strong>: Email do usuário, obrigatório.</li>
+        <li><strong>Telefone</strong>: Telefone do usuário, obrigatório.</li>
+    </ul>
+</div>

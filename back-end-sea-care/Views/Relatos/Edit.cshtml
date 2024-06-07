@@ -1,0 +1,49 @@
+﻿@model back_end_sea_care.Models.Relato
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Relato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomeRelato" class="control-label"></label>
+                <input asp-for="NomeRelato" class="form-control" />
+                <span asp-validation-for="NomeRelato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoRelato" class="control-label"></label>
+                <input asp-for="DescricaoRelato" class="form-control" />
+                <span asp-validation-for="DescricaoRelato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkFoto" class="control-label"></label>
+                <input asp-for="LinkFoto" class="form-control" />
+                <span asp-validation-for="LinkFoto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
